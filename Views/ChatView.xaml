@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="NWS_Projekt.Views.ChatView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NWS_Projekt.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.25*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label FontSize="50" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">SpoonChat v1</Label>
+        <Label FontWeight="Bold" Grid.Row="1" Grid.Column="0">Users</Label>
+        <ListView Margin="5" x:Name="UserList" Grid.Row="2" Grid.Column="0"></ListView>
+        <Button x:Name="Logout" Command="{Binding UpdateViewCommand}" CommandParameter="Login" Margin="20 10" Grid.Row="4" Grid.Column="0">Ausloggen</Button>
+        <Grid Grid.Row="4" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="Message" Margin="5" Grid.Column="0"></TextBox>
+            <Button x:Name="Send" Click="Send_Click" Margin="10" Width="90" Grid.Column="1">Senden</Button>
+        </Grid>
+    </Grid>
+</UserControl>
